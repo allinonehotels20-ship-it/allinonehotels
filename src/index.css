@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globales y personalización Ultra Premium: Deep Black & Vibrant Orange */
+@layer base {
+  body {
+    @apply bg-black text-neutral-50 font-sans antialiased selection:bg-orange-500 selection:text-white;
+  }
+}
+
+/* Scrollbar personalizada minimalista */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}
+
+/* Sliders estilizados para la Calculadora de Ahorro */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #262626;
+  height: 6px;
+  border-radius: 9999px;
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FF6B00;
+  cursor: pointer;
+  border: 2px solid #000000;
+  box-shadow: 0 0 14px rgba(255, 107, 0, 0.7);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #ff8533;
+}
+input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FF6B00;
+  cursor: pointer;
+  border: 2px solid #000000;
+  box-shadow: 0 0 14px rgba(255, 107, 0, 0.7);
+}
+
+/* Animación de líneas láser en el Visualizador del Stack */
+@keyframes flowLaser {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.3;
+  }
+}
+.laser-line {
+  stroke-dasharray: 8 8;
+  animation: flowLaser 2.2s linear infinite;
+}
